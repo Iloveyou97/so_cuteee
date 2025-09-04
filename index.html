@@ -20,24 +20,21 @@
   </style>
 </head>
 <body>
-  <!-- Ảnh troll -->
   <img src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/troll_face.jpg" alt="troll">
-
-  <!-- Dòng chữ troll -->
   <p>🎉 Chúc mừng bạn, mất mấy giây cuộc đời! 🎉</p>
 
-  <!-- Nhạc -->
-  <audio id="music" autoplay loop>
+  <audio id="music" autoplay loop muted>
     <source src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/lam-than-de.mp3" type="audio/mpeg">
   </audio>
 
   <script>
     const music = document.getElementById("music");
-    // cố gắng play khi load
+    // sau 1 giây bỏ mute để bật tiếng
     window.addEventListener("load", () => {
-      music.play().catch(err => {
-        console.log("Autoplay bị chặn:", err);
-      });
+      setTimeout(() => {
+        music.muted = false;
+        music.play().catch(err => console.log("Autoplay vẫn bị chặn:", err));
+      }, 1000);
     });
   </script>
 </body>
