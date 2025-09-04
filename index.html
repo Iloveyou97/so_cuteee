@@ -68,3 +68,22 @@
   </script>
 </body>
 </html>
+<script>
+  const music = document.getElementById("music");
+  window.addEventListener("load", () => {
+    music.play().catch(() => {
+      // nếu autoplay bị chặn, tạo nút play
+      const btn = document.createElement("button");
+      btn.textContent = "▶️ Bấm để nghe nhạc";
+      btn.style.padding = "12px 20px";
+      btn.style.fontSize = "16px";
+      btn.onclick = () => {
+        music.play();
+        btn.remove();
+      };
+      document.body.appendChild(btn);
+    });
+  });
+</script>
+
+
