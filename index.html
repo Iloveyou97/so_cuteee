@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
   <title></title>
   <style>
     body {
       margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: system-ui, sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 16px;
       height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
       text-align: center;
+      gap: 16px;
     }
-    img { max-width: 300px; height: auto; }
-    p { color: #ff4444; font-weight: bold; }
-    #lyrics { color: #00ffcc; font-size: 20px; min-height: 40px; }
+    img {
+      max-width: 320px;
+      height: auto;
+    }
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ff4444;
+    }
+    #lyrics {
+      font-size: 20px;
+      font-weight: bold;
+      color: #00ffcc;
+      min-height: 40px;
+    }
   </style>
 </head>
 <body>
+  <!-- Ảnh troll -->
   <img src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/troll_face.jpg" alt="troll">
+
+  <!-- Dòng chữ troll -->
   <p>🎉 Chúc mừng bạn, mất mấy giây cuộc đời! 🎉</p>
+
+  <!-- Lyric auto đổi -->
   <div id="lyrics"></div>
+
+  <!-- Nhạc -->
   <audio id="music" autoplay loop>
-    <source src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/lam-than-de.mp3" type="audio/mpeg">
+    <source src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/lam%20than%20de.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ phát nhạc.
   </audio>
+
   <script>
     const lyrics = [
-      "Chỉ có âm nhạc, không có lời 👀",
-      "Ở đây là để troll thôi mà!",
-      "Bạn đã mất mấy giây cuộc đời rồi",
-      "Giờ chỉ việc... nghe và cười thôi!"
+      "Chỉ là beat thôi, nghe chill 😎",
+      "Không có lyric gốc đâu nha 🎶",
+      "Bạn đã mất mấy giây cuộc đời rồi 😂",
+      "Nghe tiếp đi, đừng thoát 👀"
     ];
     let i = 0;
     const lyricsDiv = document.getElementById("lyrics");
