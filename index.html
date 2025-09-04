@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title></title>
   <style>
     body {
       margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: system-ui, sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 16px;
       height: 100vh;
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      text-align: center;
     }
-    img { max-width: 320px; height: auto; }
-    p { margin-top: 20px; font-size: 18px; font-weight: bold; color: #ff4444; }
+    img { max-width: 300px; height: auto; }
+    p { color: #ff4444; font-weight: bold; }
+    #lyrics { color: #00ffcc; font-size: 20px; min-height: 40px; }
   </style>
 </head>
 <body>
   <img src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/troll_face.jpg" alt="troll">
   <p>🎉 Chúc mừng bạn, mất mấy giây cuộc đời! 🎉</p>
-
-  <audio id="music" autoplay loop muted>
+  <div id="lyrics"></div>
+  <audio id="music" autoplay loop>
     <source src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/lam-than-de.mp3" type="audio/mpeg">
   </audio>
-
   <script>
-    const music = document.getElementById("music");
-    // sau 1 giây bỏ mute để bật tiếng
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        music.muted = false;
-        music.play().catch(err => console.log("Autoplay vẫn bị chặn:", err));
-      }, 1000);
-    });
+    const lyrics = [
+      "Chỉ có âm nhạc, không có lời 👀",
+      "Ở đây là để troll thôi mà!",
+      "Bạn đã mất mấy giây cuộc đời rồi",
+      "Giờ chỉ việc... nghe và cười thôi!"
+    ];
+    let i = 0;
+    const lyricsDiv = document.getElementById("lyrics");
+    function showLyric() {
+      lyricsDiv.textContent = lyrics[i];
+      i = (i + 1) % lyrics.length;
+    }
+    showLyric();
+    setInterval(showLyric, 5000);
   </script>
 </body>
 </html>
