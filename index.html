@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <title></title>
@@ -14,37 +14,30 @@
       background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-      text-align: center;
     }
-    img {
-      max-width: 80%;
-      max-height: 60vh;
-      height: auto;
-      display: block;
-    }
-    p {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #ff4444;
-    }
+    img { max-width: 320px; height: auto; }
+    p { margin-top: 20px; font-size: 18px; font-weight: bold; color: #ff4444; }
   </style>
 </head>
 <body>
-  <img src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/troll_face.jpg" alt="">
+  <!-- Ảnh troll -->
+  <img src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/troll_face.jpg" alt="troll">
+
+  <!-- Dòng chữ troll -->
   <p>🎉 Chúc mừng bạn, mất mấy giây cuộc đời! 🎉</p>
 
-  <audio autoplay loop hidden>
-    <source src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/Em%20C%E1%BB%A7a%20Qu%C3%A1%20Kh%E1%BB%A9%20Jerk%20Drill%20-%20Prod%20B%20E%20E%20R%20U%20$.mp3" type="audio/mpeg">
+  <!-- Nhạc -->
+  <audio id="music" autoplay loop>
+    <source src="https://raw.githubusercontent.com/Iloveyou97/so_cuteee/main/lam-than-de.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    document.addEventListener('click', function initAudio() {
-      const audio = document.querySelector('audio');
-      if (audio) {
-        audio.play().catch(err => console.warn("Không thể autoplay:", err));
-        document.removeEventListener('click', initAudio);
-      }
+    const music = document.getElementById("music");
+    // cố gắng play khi load
+    window.addEventListener("load", () => {
+      music.play().catch(err => {
+        console.log("Autoplay bị chặn:", err);
+      });
     });
   </script>
 </body>
